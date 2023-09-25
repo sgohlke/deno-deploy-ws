@@ -8,7 +8,7 @@ Deno.serve((req) => {
   socket.onmessage = (e) => {
     console.log("socket message:", e.data);
     //socket.send(new Date().toString());
-    socket.send(`<div hx-swap-oob='beforeend:#chat_room'><p>42: ${JSON.parse(e.data)['chat_msg']}}</p></div>` )
+    socket.send(`<div hx-swap-oob='beforeend:#chat_room'><p>42: ${JSON.parse(e.data)['chat_msg']}</p></div>` )
   };
   socket.onerror = (e) => console.log("socket errored:", JSON.stringify(e));
   socket.onclose = () => console.log("socket closed");
